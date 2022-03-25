@@ -10,328 +10,44 @@
     <link rel="stylesheet" href="dist/css/prism.css">
 </head>
 <body class="body-class" x-data="{sidebar: false}">
-    <header class="header-class">
-    <div class="container lg:px-0 px-3">
-        <div class="flex gap-3 justify-between items-center">
-            <div class="flex gap-2 items-center">
-                <button class="lg:hidden" @click.stop="sidebar = !sidebar">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2">
-                        <path fill-rule="evenodd"
-                            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-                <a href="inc/index.html" class="lg:h1-version-normal h1-version-small">
-                    <span>Lowersy</span>
-                </a>
-                <select class="bg-gray-200 px-5 lg:block hidden py-1 rounded-md">
-                    <option class="my-2">
-                        <a href="#">Version 1</a>
-                    </option>
-                </select>
-            </div>
-            <div class="flex gap-4 items-center">
-                <div>
-                    <a href="#" class="btn lg:block hidden">
-                        Join Contributor
-                    </a>
-                    <a href="#" class="btn lg:hidden block">
-                        Join
-                    </a>
-                </div>
-                <div>
-                    <a href="#">
-                        <svg class="h-6 w-6" fill="currentColor" stroke="none" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <title>GitHub</title>
-                            <path
-                                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+    <include src="inc/navbar.html"></include>
     <div class=" lg:flex" x-data="{side: 'introduction' , 
         aktif : 'menu text-white active-menu',
         tidak : 'menu hover-active-menu'}" >
-        <div :class="{'translate-x-0 ease-in-out opacity-100 ' : sidebar === true, '-translate-x-full w-full opacity-0 ease-out' : sidebar === false}"
-    @show="sidebar === !sidebar" class="bg-white shadow-sm p-4 w-52 overflow-hidden fixed h-screen overflow-y-auto
-    inset-0 transform lg:transform-none lg:opacity-100
-    duration-200 flex-none lg:static">
-    <div class="grids-1">
-        <div class="grids">
-            <span class="span-notication">Getting Started</span>
-            <button :class="side==='introduction' ? aktif : tidak" @click="side = 'introduction'">
-                Introduction
-            </button>
-            <button :class="side==='quick-start' ? aktif : tidak" @click="side = 'quick-start'">
-                Quick Start
-            </button>
-            <button :class="side==='customize' ? aktif : tidak" @click="side = 'customize'">
-                Customize
-            </button>
-            <button :class="side==='setup-framework' ? aktif : tidak" @click="side = 'setup-framework'">
-                Setup Framework
-            </button>
-        </div>
-        <div class="grids">
-            <span class="span-notication">Components</span>
-            <button :class="side==='badge' ? aktif : tidak" @click="side = 'badge'">
-                Badge
-            </button>
-            <button :class="side==='alert' ? aktif : tidak" @click="side = 'alert'">
-                Alert
-            </button>
-            <button :class="side==='card' ? aktif : tidak" @click="side = 'card'">
-                Card
-            </button>
-            <button :class="side==='button' ? aktif : tidak" @click="side = 'button'">
-                Button
-            </button>
-            <button :class="side==='accordion' ? aktif : tidak" @click="side = 'accordion'">
-                Accordion
-            </button>
-            <button :class="side==='dropdown' ? aktif : tidak" @click="side = 'dropdown'">
-                Dropdown
-            </button>
-            <button :class="side==='tabs' ? aktif : tidak" @click="side = 'tabs'">
-                Tabs
-            </button>
-            <button :class="side==='toast' ? aktif : tidak" @click="side = 'toast'">
-                Toast
-            </button>
-            <button :class="side==='tooltip' ? aktif : tidak" @click="side = 'tooltip'">
-                Tooltip
-            </button>
-        </div>
-
-
-    </div>
-</div>
-
+        <include src="inc/sidebar.html"></include>
         
         <!-- content -->
         <main class="p-10 flex-auto overflow-hidden h-screen overflow-y-auto">
             <div class="flex flex-col" @click.away="sidebar = !sidebar">
                 <div  x-show="side == 'introduction'">
-                    <div class="space-y-5 my-5">
-    <div class="space-y-2">
-        <h1 class="h1-version-large">Lowersy - Tailwindcss components library</h1>
-        <p class="p-version-normal">
-           Start by using the open source tailwindcss library which is very easy to use
-        </p>
-    </div>
-    <div class="py-5">
-        <h1 class="h1-version-large">Introduction</h1>
-        <p class="p-version-normal whitespace-pre-line">
-            Lowersy is an open source UI component based on the first Tailwind CSS Framework with dark mode features, Figma design, Vanilla JS, Alpine JS
-
-            Lowersy provides a clean code method with only 1 sentence, for example: "bg-blue" and provides other
-            functions elements such as dropdowns and others
-        </p>
-    </div>
-    <div class="py-5">
-        <h1 class="h1-version-large">Getting started</h1>
-        <p class="p-version-normal whitespace-pre-line">
-            To start using Lowersy on your website, you can use the NPM, CDN, DROPBOX, or LOCAL methods.
-
-            How to use it is enough to follow the method below carefully
-        </p>
-    </div>
-</div>
+                    <include src="inc/getting/introduction.html"></include>
                 </div>
                 <div  x-show="side == 'quick-start'">
-                    @@include('./inc/getting/quick-start.html')
                     <!-- <include src="inc/getting/quick-start.html"></include> -->
+                    <div class="space-y-5">
+    <div class="space-y-2">
+        <h1 class="h1-version-large">Lowersy - Quick Start</h1>
+        <p class="p-version-normal">
+            Lowersy can be used in various frameworks such as laravel, next js, nuxt js, svelte, vue js, react js, and
+            others that use npm.
+        </p>
+    </div>
+    <div class="py-10">
+        
+    </div>
+</div>
                 </div>
                 <div x-show="side == 'customize'">
-                    <div class="space-y-5">
-    <div class="space-y-2">
-        <h1 class="h1-version-large">Lowersy - Customize Framework</h1>
-        <p class="p-version-normal">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro provident, ducimus optio rem
-            odio repellat quas harum veniam vero aliquam saepe autem quaerat minus praesentium.
-        </p>
-    </div>
-    <div class="py-10">
-        <h1 class="h1-version-large">Quick Start</h1>
-        <p class="p-version-normal whitespace-pre-line">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro provident, ducimus optio rem
-            odio repellat quas harum veniam vero aliquam saepe autem quaerat minus praesentium.
-        </p>
-    </div>
-</div>
-                    <!-- <include src="inc/getting/customize.html"></include> -->
+                    <include src="inc/getting/customize.html"></include>
                 </div>
                 <div  x-show="side == 'setup-framework'">
-                    <div class="space-y-5">
-    <div class="space-y-2">
-        <h1 class="h1-version-large">Setup Framework - Using library for Tailwindcss</h1>
-        <p class="p-version-normal">
-            Lowersy can be used in various frameworks such as laravel, next js, nuxt js, svelte, vue js, react js, and others that use npm.
-        </p>
-    </div>
-    <div class="py-10">
-    </div>
-</div>
+                    <include src="inc/getting/setup-framework.html"></include>
                 </div>
                 <div  x-show="side == 'badge'">
-                    <link rel="stylesheet" href="inc/components/dist/css/prism.css">
-<div class="space-y-5 my-5">
-    <div class="space-y-2">
-        <h1 class="h1-version-large">Badge - Lawersy</h1>
-        <p class="p-version-normal">
-            Information regarding the use of badge data
-        </p>
-    </div>
-    <div class="py-5">
-
-        <div class="bg-white rounded-md" x-data="{previews : 'preview',
-                        menuTabs : 'active-page-active-result-code',
-                        menuTabsNon : 'non-active-page-active-result-code'}">
-            <div class=" px-5 bg-gray-200 rounded-t-md w-full flex justify-between items-center">
-                <span class="text-xl font-semibold">Normal</span>
-                <div class="flex lg:gap-4 gap-2 p-2">
-                    <button :class="previews==='preview' ? menuTabs : menuTabsNon" @click="previews = 'preview'">
-                        Result
-                    </button>
-                    <button :class="previews==='code' ? menuTabs : menuTabsNon" @click="previews = 'code'">
-                        Code
-                    </button>
-                </div>
-            </div>
-            <div>
-                <div x-show="previews === 'preview'" class="p-4">
-                    <div class="overflow-y-auto">
-                        <div class="flex-gap-2 p-3">
-                            <span class="badge">Black</span>
-                            <span class="badge-blue">Blue</span>
-                            <span class="badge-orange">Orange</span>
-                            <span class="badge-yellow">Yellow</span>
-                            <span class="badge-red">Red</span>
-                            <span class="badge-lime">Lime</span>
-                            <span class="badge-slate">Slate</span>
-                            <span class="badge-amber">Amber</span>
-                            <span class="badge-gray">Gray</span>
-                            <span class="badge-zinc">Zinc</span>
-                        </div>
-                    </div>
-                </div>
-                <div x-show="previews === 'code'" class="p-4">
-                    <pre class="language-html overflow-y-scroll"><code>&lt;!-- js --&gt;
-&lt;script src=&quot;dist/js/alpine.js&quot;&gt;&lt;/script&gt;
-
-&lt;!-- code --&gt;
-&lt;div&gt;
-    &lt;span class=&quot;text-base font-semibold&quot;&gt;Tabs&lt;/span&gt;
-    &lt;div class=&quot;mt-4&quot; x-data=&quot;{tabs : 'tabs1',
-    tabsaktif : 'bg-gray-900 text-white rounded-md',
-    tabstidak : 'hover:bg-gray-900 rounded-md hover:text-white'}&quot;&gt;
-        &lt;div class=&quot;flex gap-3&quot;&gt;
-            &lt;button class=&quot;px-5 py-2&quot;
-                :class=&quot;tabs === 'tabs1' ? tabsaktif : tabstidak&quot;
-                @click=&quot;tabs = 'tabs1'&quot;&gt;
-                &lt;span class=&quot;text-base font-semibold&quot;&gt;Tabs 1&lt;/span&gt;
-            &lt;/button&gt;
-            &lt;button class=&quot;px-5 py-2&quot;
-                :class=&quot;tabs === 'tabs2' ? tabsaktif : tabstidak&quot;
-                @click=&quot;tabs = 'tabs2'&quot;&gt;
-                &lt;span class=&quot;text-base font-semibold&quot;&gt;Tabs 2&lt;/span&gt;
-            &lt;/button&gt;
-            &lt;button class=&quot;px-5 py-2&quot;
-                :class=&quot;tabs === 'tabs3' ? tabsaktif : tabstidak&quot;
-                @click=&quot;tabs = 'tabs3'&quot;&gt;
-                &lt;span class=&quot;text-base font-semibold&quot;&gt;Tabs 3&lt;/span&gt;
-            &lt;/button&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;mt-4&quot;&gt;
-            &lt;div class=&quot;bg-gray-200 shadow-sm rounded-md&quot;&gt;
-                &lt;div x-show=&quot;tabs === 'tabs1'&quot; class=&quot;p-4&quot;&gt;
-                    &lt;h3 class=&quot;text-xl font-semibold&quot;&gt;Tabs 1&lt;/h3&gt;
-                    &lt;span class=&quot;text-base font-medium&quot;&gt;
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, quam.
-                    &lt;/span&gt;
-                &lt;/div&gt;
-                &lt;div x-show=&quot;tabs === 'tabs2'&quot; class=&quot;p-4&quot;&gt;
-                    &lt;h3 class=&quot;text-xl font-semibold&quot;&gt;Tabs 2&lt;/h3&gt;
-                    &lt;span class=&quot;text-base font-medium&quot;&gt;
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, quam.
-                    &lt;/span&gt;
-                &lt;/div&gt;
-                &lt;div x-show=&quot;tabs == 'tabs3'&quot; class=&quot;p-4&quot;&gt;
-                    &lt;h3 class=&quot;text-xl font-semibold&quot;&gt;Tabs 3&lt;/h3&gt;
-                    &lt;span class=&quot;text-base font-medium&quot;&gt;
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, quam.
-                    &lt;/span&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<script src="inc/components/dist/js/prism.js"></script>
+                    <include src="inc/components/badge.html"></include>
                 </div>
                 <div  x-show="side == 'alert'">
-                    <link rel="stylesheet" href="inc/components/dist/css/prism.css">
-<div class="space-y-5 my-5">
-    <div class="space-y-2">
-        <h1 class="h1-version-large">Alert - Lawersy</h1>
-        <p class="p-version-normal">
-            Information regarding the use of badge data
-        </p>
-    </div>
-    <div class="py-5">
-
-        <div class="bg-white rounded-md" x-data="{previews : 'preview',
-                        menuTabs : 'active-page-active-result-code',
-                        menuTabsNon : 'non-active-page-active-result-code'}">
-            <div class=" px-5 bg-gray-200 rounded-t-md w-full flex justify-between items-center">
-                <span class="text-xl font-semibold">Normal</span>
-                <div class="flex lg:gap-4 gap-2 p-2">
-                    <button :class="previews==='preview' ? menuTabs : menuTabsNon" @click="previews = 'preview'">
-                        Result
-                    </button>
-                    <button :class="previews==='code' ? menuTabs : menuTabsNon" @click="previews = 'code'">
-                        Code
-                    </button>
-                </div>
-            </div>
-            <div>
-                <div x-show="previews === 'preview'" class="p-4">
-                    <div class="overflow-y-auto">
-                        <div class="flex-gap-2 p-3">
-                            <span class="badge">Black</span>
-                            <span class="badge-blue">Blue</span>
-                            <span class="badge-orange">Orange</span>
-                            <span class="badge-yellow">Yellow</span>
-                            <span class="badge-red">Red</span>
-                            <span class="badge-lime">Lime</span>
-                            <span class="badge-slate">Slate</span>
-                            <span class="badge-amber">Amber</span>
-                            <span class="badge-gray">Gray</span>
-                            <span class="badge-zinc">Zinc</span>
-                        </div>
-                    </div>
-                </div>
-                <div x-show="previews === 'code'" class="p-4">
-                    
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-<script src="inc/components/dist/js/prism.js"></script>
+                    <include src="inc/components/alert.html"></include>
                 </div>
             </div>
         </main>
