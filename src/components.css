@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+    html{
+        font-family: 'Quicksand', sans-serif;
+    }
+}
+
+@layer components{
+
+    /* body */
+    .body-class{
+        @apply bg-gray-50 overflow-hidden min-h-screen
+    }
+
+    /* header */
+    .header-class{
+        @apply bg-white shadow-sm sticky top-0 z-20 p-4
+    }
+
+
+    /* getting */
+    .span-notication{
+        @apply text-xs font-semibold tracking-wider
+    }
+
+    /* h1 */
+    .h1-version-large{
+        @apply text-3xl font-bold
+    }
+    .h1-version-normal{
+        @apply text-2xl font-bold
+    }
+    .h1-version-small{
+        @apply text-xl font-bold
+    }
+    /* p */
+    .p-version-large{
+        @apply text-xl font-normal
+    }
+    .p-version-normal{
+        @apply text-base font-normal
+    }
+    .p-version-small{
+        @apply text-sm font-normal
+    }
+    .p-version-xs{
+        @apply text-xs font-normal
+    }
+
+
+    .menu{
+        @apply text-sm font-normal flex
+    }
+    .active-menu {
+        @apply text-white bg-gray-900 w-full py-2 rounded-md px-2
+    }
+    .hover-active-menu {
+        @apply hover:text-white hover:bg-gray-900 w-full py-2 rounded-md px-2
+    }
+
+    /* flex gap */
+
+    .flex-gap-1{
+        @apply flex lg:flex-row flex-col gap-1
+    }
+    .flex-gap-2{
+        @apply flex lg:flex-row flex-col gap-2
+    }
+    .flex-gap-3{
+        @apply flex lg:flex-row flex-col gap-3
+    }
+    .flex-gap-4{
+        @apply flex lg:flex-row flex-col gap-4
+    }
+    .flex-gap-5{
+        @apply flex lg:flex-row flex-col gap-5
+    }
+
+    /* grid 1 */
+    .grids{
+        @apply grid grid-cols-1 gap-4 
+    }
+    .grids-1{
+        @apply grid grid-cols-1 gap-4 p-2 lg:mt-0 mt-20
+    }
+    .grids-cols-1{
+        @apply grid grid-cols-1 gap-4 p-2
+    }
+    .grids-cols-2{
+        @apply grid lg:grid-cols-2 grid-cols-1 gap-3 p-2
+    }
+    .grids-cols-3{
+        @apply grid lg:grid-cols-3 grid-cols-1 gap-3 p-2
+    }
+    .grids-cols-4{
+        @apply grid lg:grid-cols-4 grid-cols-1 gap-3 p-2
+    }
+    .grids-cols-5{
+        @apply grid lg:grid-cols-5 grid-cols-1 gap-3 p-2
+    }
+
+    .btn {
+        @apply bg-black px-3 rounded-md hover:bg-gray-500 py-2 text-white
+    }
+
+
+    /* components */
+
+    /* badge */
+    .badge{
+        @apply bg-black px-2 p-0.5 text-white rounded-sm
+    }
+    .badge-blue{
+        @apply bg-blue-500 px-2 p-0.5 text-white rounded-sm
+    }
+    .badge-orange{
+        @apply bg-orange-500 px-2 p-0.5 text-white rounded-sm
+    }
+    .badge-yellow{
+        @apply bg-yellow-500 px-2 p-0.5 text-white rounded-sm
+    }
+    .badge-red{
+        @apply bg-red-500 px-2 p-0.5 text-white rounded-sm
+    }
+    .badge-gray{
+        @apply bg-gray-500 px-2 p-0.5 text-white rounded-sm
+    }
+    .badge-slate{
+        @apply bg-slate-500 px-2 p-0.5 text-white rounded-sm
+    }
+    .badge-zinc{
+        @apply bg-zinc-500 px-2 p-0.5 text-white rounded-sm
+    }
+    .badge-neutral{
+        @apply bg-neutral-500 px-2 p-0.5 text-white rounded-sm
+    }
+    .badge-stone{
+        @apply bg-stone-500 px-2 p-0.5 text-white rounded-sm
+    }
+    .badge-amber{
+        @apply bg-amber-500 px-2 p-0.5 text-white rounded-sm
+    }
+    .badge-lime{
+        @apply bg-lime-500 px-2 p-0.5 text-white rounded-sm
+    }
+    
+}

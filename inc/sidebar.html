@@ -1,0 +1,54 @@
+<div :class="{'translate-x-0 ease-in-out opacity-100 ' : sidebar === true, '-translate-x-full w-full opacity-0 ease-out' : sidebar === false}"
+    @show="sidebar === !sidebar" class="bg-white shadow-sm p-4 w-52 overflow-hidden fixed h-screen overflow-y-auto
+    inset-0 transform lg:transform-none lg:opacity-100
+    duration-200 flex-none lg:static">
+    <div class="grids-1">
+        <div class="grids">
+            <span class="span-notication">Getting Started</span>
+            <button :class="side==='introduction' ? aktif : tidak" @click="side = 'introduction'">
+                Introduction
+            </button>
+            <button :class="side==='quick-start' ? aktif : tidak" @click="side = 'quick-start'">
+                Quick Start
+            </button>
+            <button :class="side==='customize' ? aktif : tidak" @click="side = 'customize'">
+                Customize
+            </button>
+            <button :class="side==='setup-framework' ? aktif : tidak" @click="side = 'setup-framework'">
+                Setup Framework
+            </button>
+        </div>
+        <div class="grids">
+            <span class="span-notication">Components</span>
+            <button :class="side==='badge' ? aktif : tidak" @click="side = 'badge'">
+                Badge
+            </button>
+            <button :class="side==='alert' ? aktif : tidak" @click="side = 'alert'">
+                Alert
+            </button>
+            <button :class="side==='card' ? aktif : tidak" @click="side = 'card'">
+                Card
+            </button>
+            <button :class="side==='button' ? aktif : tidak" @click="side = 'button'">
+                Button
+            </button>
+            <button :class="side==='accordion' ? aktif : tidak" @click="side = 'accordion'">
+                Accordion
+            </button>
+            <button :class="side==='dropdown' ? aktif : tidak" @click="side = 'dropdown'">
+                Dropdown
+            </button>
+            <button :class="side==='tabs' ? aktif : tidak" @click="side = 'tabs'">
+                Tabs
+            </button>
+            <button :class="side==='toast' ? aktif : tidak" @click="side = 'toast'">
+                Toast
+            </button>
+            <button :class="side==='tooltip' ? aktif : tidak" @click="side = 'tooltip'">
+                Tooltip
+            </button>
+        </div>
+
+
+    </div>
+</div>

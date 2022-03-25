@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" class="smooth-scrolling" translate="yes">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lowersy - Tailwindcss components library</title>
+    <link rel="stylesheet" href="dist/components.css">
+    <link rel="stylesheet" href="dist/css/font-quicksand.css">
+    <link rel="stylesheet" href="dist/css/prism.css">
+</head>
+<body class="body-class" x-data="{sidebar: false}">
+    <include src="inc/navbar.html"></include>
+    <div class=" lg:flex" x-data="{side: 'introduction' , 
+        aktif : 'menu text-white active-menu',
+        tidak : 'menu hover-active-menu'}" >
+        <include src="inc/sidebar.html"></include>
+        
+        <!-- content -->
+        <main class="p-10 flex-auto overflow-hidden h-screen overflow-y-auto">
+            <div class="flex flex-col" @click.away="sidebar = !sidebar">
+                <div  x-show="side == 'introduction'">
+                    <include src="inc/getting/introduction.html"></include>
+                </div>
+                <div  x-show="side == 'quick-start'">
+                    @@include('./inc/getting/quick-start.html')
+                    <!-- <include src="inc/getting/quick-start.html"></include> -->
+                </div>
+                <div x-show="side == 'customize'">
+                    <include src="inc/getting/customize.html"></include>
+                    <!-- <include src="inc/getting/customize.html"></include> -->
+                </div>
+                <div  x-show="side == 'setup-framework'">
+                    <include src="inc/getting/setup-framework.html"></include>
+                </div>
+                <div  x-show="side == 'badge'">
+                    <include src="inc/components/badge.html"></include>
+                </div>
+                <div  x-show="side == 'alert'">
+                    <include src="inc/components/alert.html"></include>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+<script src="dist/js/include.js"></script>
+<script src="dist/js/alpine.js"></script>
+<script src="dist/js/hide.js"></script>
+<script src="dist/js/prism.js"></script>
+<script src="gulpfile.js"></script>
+</html>
