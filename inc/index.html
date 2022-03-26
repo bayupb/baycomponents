@@ -9,18 +9,21 @@
     <link rel="stylesheet" href="dist/css/font-quicksand.css">
     <link rel="stylesheet" href="dist/css/prism.css">
 </head>
-<body class="body-class" x-data="{sidebar: false}">
-    <include src="inc/navbar.html"></include>
+<body class="body-class dark:bg-gray-400" x-data="{sidebar: false}">
+    <!-- <include src="inc/navbar.html"></include> -->
+    @@include('./inc/navbar.html')
     <div class=" lg:flex" x-data="{side: 'introduction' , 
         aktif : 'menu text-white active-menu',
         tidak : 'menu hover-active-menu'}" >
-        <include src="inc/sidebar.html"></include>
+        <!-- <include src="inc/sidebar.html"></include> -->
+        @@include('./inc/sidebar.html')
         
         <!-- content -->
         <main class="p-10 flex-auto overflow-hidden h-screen overflow-y-auto">
             <div class="flex flex-col" @click.away="sidebar = !sidebar">
                 <div  x-show="side == 'introduction'">
-                    <include src="inc/getting/introduction.html"></include>
+                    @@include('./inc/introduction.html')
+                    <!-- <include src="inc/getting/introduction.html"></include> -->
                 </div>
                 <div  x-show="side == 'quick-start'">
                     <!-- <include src="inc/getting/quick-start.html"></include> -->
@@ -35,20 +38,43 @@
     <div class="py-10">
         
     </div>
-</div>
+                    </div>
                 </div>
                 <div x-show="side == 'customize'">
-                    <include src="inc/getting/customize.html"></include>
+                    <div class="space-y-5">
+    <div class="space-y-2">
+        <h1 class="h1-version-large">Lowersy - Customize Framework</h1>
+        <p class="p-version-normal">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro provident, ducimus optio rem
+            odio repellat quas harum veniam vero aliquam saepe autem quaerat minus praesentium.
+        </p>
+    </div>
+    <div class="py-10">
+        <h1 class="h1-version-large">Quick Start</h1>
+        <p class="p-version-normal whitespace-pre-line">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro provident, ducimus optio rem
+            odio repellat quas harum veniam vero aliquam saepe autem quaerat minus praesentium.
+        </p>
+    </div>
+</div>
+                    <!-- <include src="inc/getting/customize.html"></include> -->
                 </div>
                 <div  x-show="side == 'setup-framework'">
                     <include src="inc/getting/setup-framework.html"></include>
                 </div>
                 <div  x-show="side == 'badge'">
-                    <include src="inc/components/badge.html"></include>
+                    @@include('./inc/badge.html')
+                    <!-- <include src="inc/components/badge.html"></include> -->
                 </div>
                 <div  x-show="side == 'alert'">
-                    <include src="inc/components/alert.html"></include>
+                    <!-- <include src="inc/components/alert.html"></include> -->
+                    @@include('inc/components/alert.html')
                 </div>
+                    <div  x-show="side == 'button'">
+                    @@include('inc/components/button.html')
+
+<script src="dist/js/prism.js"></script>
+                    </div>
             </div>
         </main>
     </div>
@@ -58,4 +84,21 @@
 <script src="dist/js/hide.js"></script>
 <script src="dist/js/prism.js"></script>
 <script src="gulpfile.js"></script>
+<script>
+     document.getElementById('buttondark').addEventListener('click', function() {
+     let htmlClasses = document.querySelector('html').classList;
+     if(localStorage.theme == 'dark') {
+     htmlClasses.remove('dark');
+     localStorage.removeItem('theme')
+     } else {
+     htmlClasses.add('dark');
+     localStorage.theme = 'dark';
+     }
+     });
+     if (localStorage.theme === 'dark' || (!'theme' in localStorage && window.matchMedia('(prefers-color-scheme:dark)').matches)) {
+     document.querySelector('html').classList.add('dark')
+     } else if (localStorage.theme === 'dark') {
+     document.querySelector('html').classList.add('dark')
+     }
+</script>
 </html>
