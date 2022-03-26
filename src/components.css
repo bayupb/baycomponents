@@ -7,24 +7,45 @@
     html{
         font-family: 'Quicksand', sans-serif;
     }
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888; 
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+    }
 }
 
 @layer components{
 
     /* body */
     .body-class{
-        @apply bg-gray-50 overflow-hidden min-h-screen dark:bg-gray-600
+        @apply bg-gray-50 overflow-hidden min-h-screen dark:bg-gray-800 dark:text-white
     }
 
     /* header */
     .header-class{
-        @apply bg-white shadow-sm sticky top-0 z-20 p-4 dark:bg-gray-400
+        @apply bg-white shadow-sm sticky top-0 z-20 p-4 dark:bg-gray-900 dark:text-white
     }
 
+    .main-class{
+        @apply p-10 flex-auto overflow-hidden h-screen overflow-y-auto dark:bg-gray-700
+    }
 
     /* getting */
     .span-notication{
-        @apply text-xs font-semibold tracking-wider
+        @apply text-xs font-semibold tracking-wider dark:text-white
     }
 
     /* h1 */
@@ -56,10 +77,10 @@
         @apply text-sm font-normal flex
     }
     .active-menu {
-        @apply text-white bg-gray-900 w-full py-2 rounded-md px-2
+        @apply text-white bg-gray-900 w-full py-2 rounded-md dark:text-gray-900 px-2 dark:bg-white 
     }
     .hover-active-menu {
-        @apply hover:text-white hover:bg-gray-900 w-full py-2 rounded-md px-2
+        @apply hover:text-white hover:bg-gray-900 w-full py-2 rounded-md px-2 dark:hover:text-gray-900 dark:hover:bg-white dark:text-white
     }
 
     /* flex gap */

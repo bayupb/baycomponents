@@ -1,6 +1,6 @@
 module.exports = {
   purge: ['*', './*/*.html', './inc/*/*.html', ',./inc/**/*.html'],
-  darkmode: 'class',
+  darkMode: 'class',
   theme: {
     extend: {},
   },

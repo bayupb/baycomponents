@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="dist/css/font-quicksand.css">
     <link rel="stylesheet" href="dist/css/prism.css">
 </head>
-<body class="body-class dark:bg-gray-400" x-data="{sidebar: false}">
+<body class="body-class " x-data="{sidebar: false}">
     <!-- <include src="inc/navbar.html"></include> -->
     <header class="header-class">
     <div class="container lg:px-0 px-3">
@@ -56,7 +56,7 @@
             </div>
         </div>
     </div>
-</header>
+    </header>
     <div class=" lg:flex" x-data="{side: 'introduction' , 
         aktif : 'menu text-white active-menu',
         tidak : 'menu hover-active-menu'}" >
@@ -66,13 +66,12 @@
         <main class="p-10 flex-auto overflow-hidden h-screen overflow-y-auto">
             <div class="flex flex-col" @click.away="sidebar = !sidebar">
                 <div  x-show="side == 'introduction'">
-                    <include src="inc/getting/introduction.html"></include>
+                    <div data-include="introduction"></div>
                 </div>
                 <div  x-show="side == 'quick-start'">
-                    <!-- <include src="inc/getting/quick-start.html"></include> -->
-                    <div class="space-y-5">
+                   <div class="space-y-5">
     <div class="space-y-2">
-        <h1 class="h1-version-large">Lowersy - Quick Start</h1>
+        <h1 class="h1-version-large">Quick Start - Lowersy</h1>
         <p class="p-version-normal">
             Lowersy can be used in various frameworks such as laravel, next js, nuxt js, svelte, vue js, react js, and
             others that use npm.
@@ -84,9 +83,9 @@
 </div>
                 </div>
                 <div x-show="side == 'customize'">
-                    <div class="space-y-5">
+                <div class="space-y-5">
     <div class="space-y-2">
-        <h1 class="h1-version-large">Lowersy - Customize Framework</h1>
+        <h1 class="h1-version-large">Customize Framework - Lowersy</h1>
         <p class="p-version-normal">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro provident, ducimus optio rem
             odio repellat quas harum veniam vero aliquam saepe autem quaerat minus praesentium.
@@ -106,215 +105,14 @@
                     <include src="inc/getting/setup-framework.html"></include>
                 </div>
                 <div  x-show="side == 'badge'">
-                    <link rel="stylesheet" href="dist/css/prism.css">
-<div class="space-y-5 my-5">
-    <div class="space-y-2">
-        <h1 class="h1-version-large">Badge - Lawersy</h1>
-        <p class="p-version-normal">
-            Information regarding the use of badge data
-        </p>
-    </div>
-    <div class="py-5">
-
-        <div class="bg-white rounded-md" x-data="{previews : 'preview',
-                        menuTabs : 'active-page-active-result-code',
-                        menuTabsNon : 'non-active-page-active-result-code'}">
-            <div class=" px-5 bg-gray-200 rounded-t-md w-full flex justify-between items-center">
-                <span class="text-xl font-semibold">Normal</span>
-                <div class="flex lg:gap-4 gap-2 p-2">
-                    <button :class="previews==='preview' ? menuTabs : menuTabsNon" @click="previews = 'preview'">
-                        Result
-                    </button>
-                    <button :class="previews==='code' ? menuTabs : menuTabsNon" @click="previews = 'code'">
-                        Code
-                    </button>
-                </div>
-            </div>
-            <div>
-                <div x-show="previews === 'preview'" class="p-4">
-                    <div class="overflow-y-auto">
-                        <div class="flex-gap-2 p-3">
-                            <span class="badge">Black</span>
-                            <span class="badge-blue">Blue</span>
-                            <span class="badge-orange">Orange</span>
-                            <span class="badge-yellow">Yellow</span>
-                            <span class="badge-red">Red</span>
-                            <span class="badge-lime">Lime</span>
-                            <span class="badge-slate">Slate</span>
-                            <span class="badge-amber">Amber</span>
-                            <span class="badge-gray">Gray</span>
-                            <span class="badge-zinc">Zinc</span>
-                        </div>
-                    </div>
-                </div>
-                <div x-show="previews === 'code'" class="p-4">
-                    <pre class="language-html overflow-y-scroll"><code>&lt;!-- js --&gt;
-&lt;script src=&quot;dist/js/alpine.js&quot;&gt;&lt;/script&gt;
-
-&lt;!-- code --&gt;
-&lt;div&gt;
-    &lt;span class=&quot;text-base font-semibold&quot;&gt;Tabs&lt;/span&gt;
-    &lt;div class=&quot;mt-4&quot; x-data=&quot;{tabs : 'tabs1',
-    tabsaktif : 'bg-gray-900 text-white rounded-md',
-    tabstidak : 'hover:bg-gray-900 rounded-md hover:text-white'}&quot;&gt;
-        &lt;div class=&quot;flex gap-3&quot;&gt;
-            &lt;button class=&quot;px-5 py-2&quot;
-                :class=&quot;tabs === 'tabs1' ? tabsaktif : tabstidak&quot;
-                @click=&quot;tabs = 'tabs1'&quot;&gt;
-                &lt;span class=&quot;text-base font-semibold&quot;&gt;Tabs 1&lt;/span&gt;
-            &lt;/button&gt;
-            &lt;button class=&quot;px-5 py-2&quot;
-                :class=&quot;tabs === 'tabs2' ? tabsaktif : tabstidak&quot;
-                @click=&quot;tabs = 'tabs2'&quot;&gt;
-                &lt;span class=&quot;text-base font-semibold&quot;&gt;Tabs 2&lt;/span&gt;
-            &lt;/button&gt;
-            &lt;button class=&quot;px-5 py-2&quot;
-                :class=&quot;tabs === 'tabs3' ? tabsaktif : tabstidak&quot;
-                @click=&quot;tabs = 'tabs3'&quot;&gt;
-                &lt;span class=&quot;text-base font-semibold&quot;&gt;Tabs 3&lt;/span&gt;
-            &lt;/button&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;mt-4&quot;&gt;
-            &lt;div class=&quot;bg-gray-200 shadow-sm rounded-md&quot;&gt;
-                &lt;div x-show=&quot;tabs === 'tabs1'&quot; class=&quot;p-4&quot;&gt;
-                    &lt;h3 class=&quot;text-xl font-semibold&quot;&gt;Tabs 1&lt;/h3&gt;
-                    &lt;span class=&quot;text-base font-medium&quot;&gt;
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, quam.
-                    &lt;/span&gt;
-                &lt;/div&gt;
-                &lt;div x-show=&quot;tabs === 'tabs2'&quot; class=&quot;p-4&quot;&gt;
-                    &lt;h3 class=&quot;text-xl font-semibold&quot;&gt;Tabs 2&lt;/h3&gt;
-                    &lt;span class=&quot;text-base font-medium&quot;&gt;
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, quam.
-                    &lt;/span&gt;
-                &lt;/div&gt;
-                &lt;div x-show=&quot;tabs == 'tabs3'&quot; class=&quot;p-4&quot;&gt;
-                    &lt;h3 class=&quot;text-xl font-semibold&quot;&gt;Tabs 3&lt;/h3&gt;
-                    &lt;span class=&quot;text-base font-medium&quot;&gt;
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, quam.
-                    &lt;/span&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<script src="dist/js/prism.js"></script>
+                   <include src="inc/components/badge.html">
                     <!-- <include src="inc/components/badge.html"></include> -->
                 </div>
                 <div  x-show="side == 'alert'">
                     <include src="inc/components/alert.html"></include>
                 </div>
                     <div  x-show="side == 'button'">
-                        <!-- <include src="inc/components/button.html"></include> -->
-                        <link rel="stylesheet" href="dist/css/prism.css">
-<div class="space-y-5 my-5">
-    <div class="space-y-2">
-        <h1 class="h1-version-large">Button - Lawersy</h1>
-        <p class="p-version-normal">
-            Information regarding the use of badge data
-        </p>
-    </div>
-    <div class="py-5">
-
-        <div class="bg-white rounded-md" x-data="{previews : 'preview',
-                        menuTabs : 'active-page-active-result-code',
-                        menuTabsNon : 'non-active-page-active-result-code'}">
-            <div class=" px-5 bg-gray-200 rounded-t-md w-full flex justify-between items-center">
-                <span class="text-xl font-semibold">Normal</span>
-                <div class="flex lg:gap-4 gap-2 p-2">
-                    <button :class="previews==='preview' ? menuTabs : menuTabsNon" @click="previews = 'preview'">
-                        Result
-                    </button>
-                    <button :class="previews==='code' ? menuTabs : menuTabsNon" @click="previews = 'code'">
-                        Code
-                    </button>
-                </div>
-            </div>
-            <div>
-                <div x-show="previews === 'preview'" class="p-4">
-                    <div class="overflow-y-auto">
-                        <div class="flex-gap-2 p-3">
-                            <span class="badge">Black</span>
-                            <span class="badge-blue">Blue</span>
-                            <span class="badge-orange">Orange</span>
-                            <span class="badge-yellow">Yellow</span>
-                            <span class="badge-red">Red</span>
-                            <span class="badge-lime">Lime</span>
-                            <span class="badge-slate">Slate</span>
-                            <span class="badge-amber">Amber</span>
-                            <span class="badge-gray">Gray</span>
-                            <span class="badge-zinc">Zinc</span>
-                        </div>
-                    </div>
-                </div>
-                <div x-show="previews === 'code'" class="p-4">
-                    <pre class="language-html overflow-y-scroll"><code>&lt;!-- js --&gt;
-&lt;script src=&quot;dist/js/alpine.js&quot;&gt;&lt;/script&gt;
-
-&lt;!-- code --&gt;
-&lt;div&gt;
-    &lt;span class=&quot;text-base font-semibold&quot;&gt;Tabs&lt;/span&gt;
-    &lt;div class=&quot;mt-4&quot; x-data=&quot;{tabs : 'tabs1',
-    tabsaktif : 'bg-gray-900 text-white rounded-md',
-    tabstidak : 'hover:bg-gray-900 rounded-md hover:text-white'}&quot;&gt;
-        &lt;div class=&quot;flex gap-3&quot;&gt;
-            &lt;button class=&quot;px-5 py-2&quot;
-                :class=&quot;tabs === 'tabs1' ? tabsaktif : tabstidak&quot;
-                @click=&quot;tabs = 'tabs1'&quot;&gt;
-                &lt;span class=&quot;text-base font-semibold&quot;&gt;Tabs 1&lt;/span&gt;
-            &lt;/button&gt;
-            &lt;button class=&quot;px-5 py-2&quot;
-                :class=&quot;tabs === 'tabs2' ? tabsaktif : tabstidak&quot;
-                @click=&quot;tabs = 'tabs2'&quot;&gt;
-                &lt;span class=&quot;text-base font-semibold&quot;&gt;Tabs 2&lt;/span&gt;
-            &lt;/button&gt;
-            &lt;button class=&quot;px-5 py-2&quot;
-                :class=&quot;tabs === 'tabs3' ? tabsaktif : tabstidak&quot;
-                @click=&quot;tabs = 'tabs3'&quot;&gt;
-                &lt;span class=&quot;text-base font-semibold&quot;&gt;Tabs 3&lt;/span&gt;
-            &lt;/button&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;mt-4&quot;&gt;
-            &lt;div class=&quot;bg-gray-200 shadow-sm rounded-md&quot;&gt;
-                &lt;div x-show=&quot;tabs === 'tabs1'&quot; class=&quot;p-4&quot;&gt;
-                    &lt;h3 class=&quot;text-xl font-semibold&quot;&gt;Tabs 1&lt;/h3&gt;
-                    &lt;span class=&quot;text-base font-medium&quot;&gt;
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, quam.
-                    &lt;/span&gt;
-                &lt;/div&gt;
-                &lt;div x-show=&quot;tabs === 'tabs2'&quot; class=&quot;p-4&quot;&gt;
-                    &lt;h3 class=&quot;text-xl font-semibold&quot;&gt;Tabs 2&lt;/h3&gt;
-                    &lt;span class=&quot;text-base font-medium&quot;&gt;
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, quam.
-                    &lt;/span&gt;
-                &lt;/div&gt;
-                &lt;div x-show=&quot;tabs == 'tabs3'&quot; class=&quot;p-4&quot;&gt;
-                    &lt;h3 class=&quot;text-xl font-semibold&quot;&gt;Tabs 3&lt;/h3&gt;
-                    &lt;span class=&quot;text-base font-medium&quot;&gt;
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, quam.
-                    &lt;/span&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<script src="dist/js/prism.js"></script>
+                        @inc
                     </div>
             </div>
         </main>

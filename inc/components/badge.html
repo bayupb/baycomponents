@@ -40,57 +40,17 @@
                     </div>
                 </div>
                 <div x-show="previews === 'code'" class="p-4">
-                    <pre class="language-html overflow-y-scroll"><code>&lt;!-- js --&gt;
-&lt;script src=&quot;dist/js/alpine.js&quot;&gt;&lt;/script&gt;
-
-&lt;!-- code --&gt;
-&lt;div&gt;
-    &lt;span class=&quot;text-base font-semibold&quot;&gt;Tabs&lt;/span&gt;
-    &lt;div class=&quot;mt-4&quot; x-data=&quot;{tabs : 'tabs1',
-    tabsaktif : 'bg-gray-900 text-white rounded-md',
-    tabstidak : 'hover:bg-gray-900 rounded-md hover:text-white'}&quot;&gt;
-        &lt;div class=&quot;flex gap-3&quot;&gt;
-            &lt;button class=&quot;px-5 py-2&quot;
-                :class=&quot;tabs === 'tabs1' ? tabsaktif : tabstidak&quot;
-                @click=&quot;tabs = 'tabs1'&quot;&gt;
-                &lt;span class=&quot;text-base font-semibold&quot;&gt;Tabs 1&lt;/span&gt;
-            &lt;/button&gt;
-            &lt;button class=&quot;px-5 py-2&quot;
-                :class=&quot;tabs === 'tabs2' ? tabsaktif : tabstidak&quot;
-                @click=&quot;tabs = 'tabs2'&quot;&gt;
-                &lt;span class=&quot;text-base font-semibold&quot;&gt;Tabs 2&lt;/span&gt;
-            &lt;/button&gt;
-            &lt;button class=&quot;px-5 py-2&quot;
-                :class=&quot;tabs === 'tabs3' ? tabsaktif : tabstidak&quot;
-                @click=&quot;tabs = 'tabs3'&quot;&gt;
-                &lt;span class=&quot;text-base font-semibold&quot;&gt;Tabs 3&lt;/span&gt;
-            &lt;/button&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;mt-4&quot;&gt;
-            &lt;div class=&quot;bg-gray-200 shadow-sm rounded-md&quot;&gt;
-                &lt;div x-show=&quot;tabs === 'tabs1'&quot; class=&quot;p-4&quot;&gt;
-                    &lt;h3 class=&quot;text-xl font-semibold&quot;&gt;Tabs 1&lt;/h3&gt;
-                    &lt;span class=&quot;text-base font-medium&quot;&gt;
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, quam.
-                    &lt;/span&gt;
-                &lt;/div&gt;
-                &lt;div x-show=&quot;tabs === 'tabs2'&quot; class=&quot;p-4&quot;&gt;
-                    &lt;h3 class=&quot;text-xl font-semibold&quot;&gt;Tabs 2&lt;/h3&gt;
-                    &lt;span class=&quot;text-base font-medium&quot;&gt;
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, quam.
-                    &lt;/span&gt;
-                &lt;/div&gt;
-                &lt;div x-show=&quot;tabs == 'tabs3'&quot; class=&quot;p-4&quot;&gt;
-                    &lt;h3 class=&quot;text-xl font-semibold&quot;&gt;Tabs 3&lt;/h3&gt;
-                    &lt;span class=&quot;text-base font-medium&quot;&gt;
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, quam.
-                    &lt;/span&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+                    <pre class="language-html overflow-y-scroll"><code>
+                        &lt;span class=&quot;badge&quot;&gt;Black&lt;/span&gt;
+                        &lt;span class=&quot;badge-blue&quot;&gt;Blue&lt;/span&gt;
+                        &lt;span class=&quot;badge-orange&quot;&gt;Orange&lt;/span&gt;
+                        &lt;span class=&quot;badge-yellow&quot;&gt;Yellow&lt;/span&gt;
+                        &lt;span class=&quot;badge-red&quot;&gt;Red&lt;/span&gt;
+                        &lt;span class=&quot;badge-lime&quot;&gt;Lime&lt;/span&gt;
+                        &lt;span class=&quot;badge-slate&quot;&gt;Slate&lt;/span&gt;
+                        &lt;span class=&quot;badge-amber&quot;&gt;Amber&lt;/span&gt;
+                        &lt;span class=&quot;badge-gray&quot;&gt;Gray&lt;/span&gt;
+                        &lt;span class=&quot;badge-zinc&quot;&gt;Zinc&lt;/span&gt;</code></pre>
                 </div>
             </div>
 

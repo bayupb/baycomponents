@@ -27,3 +27,11 @@ function myHTMLInclude() {
 
 })();
 
+document.querySelector(function () {
+  var includes = document.querySelector('[data-include]')
+  $.each(includes, function () {
+    var file = './inc/' + document.querySelector(this).data('include') + '.html'
+    document.querySelector(this).load(file)
+  })
+})
+

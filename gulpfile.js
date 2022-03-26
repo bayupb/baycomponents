@@ -17,7 +17,7 @@ async function reload() {
 
 // Copy assets after build
 async function copyAssets() {
-  gulp.src(['dist/**/*'])
+  gulp.src(['dist/*/*'])
     .pipe(gulp.dest(paths.scripts.dest));
 }
 
@@ -51,5 +51,5 @@ exports.default = async function() {
   // Build and reload at the first time
   buildAndReload();
   // Watch task
-  watch(["*.html","dist/**/*"], series(buildAndReload));
+  watch(["*.html","dist/*/*"], series(buildAndReload));
 };
